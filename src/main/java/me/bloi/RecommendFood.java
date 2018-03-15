@@ -3,8 +3,11 @@ package me.bloi;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.MessageEvent;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.*;
@@ -14,9 +17,12 @@ public class RecommendFood extends ListenerAdapter {
     Random rand = null;
     @Override
     public void onMessage(MessageEvent event) {
-        if (event.getMessage().startsWith("!food") || event.getMessage().startsWith("what should I eat?")) {
+        if (event.getMessage().startsWith("!food") || event.getMessage().equalsIgnoreCase("what should I eat?")) {
             if (foodList == null) {
                 foodList = getFoodList();
+                if (foodList == null) {
+                    return;
+                }
             }
             String select = foodList.get(rand.nextInt(foodList.size() - 1));
             event.respond(select);

@@ -23,6 +23,7 @@ public class foodbotMain extends ListenerAdapter {
                 .addAutoJoinChannel("#bots") //Join the bot channel
                 .addListener(new foodbotMain()) //Add THIS listener that will be called on Events
                 .addListener(new RecommendFood())
+                .addListener(new coinLookup())
                 .buildConfiguration();
 
         //Create our bot with the configuration
