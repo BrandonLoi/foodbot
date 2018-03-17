@@ -24,6 +24,7 @@ public class foodbotMain extends ListenerAdapter {
                 .addListener(new foodbotMain()) //Add THIS listener that will be called on Events
                 .addListener(new RecommendFood())
                 .addListener(new coinLookup())
+                .addListener(new SwansonQuote())
                 .buildConfiguration();
 
         //Create our bot with the configuration
