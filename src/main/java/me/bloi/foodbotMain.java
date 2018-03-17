@@ -26,6 +26,7 @@ public class foodbotMain extends ListenerAdapter {
                 .addListener(new coinLookup())
                 .addListener(new SwansonQuote())
                 .addListener(new GenerateRobot())
+                .addListener(new helpLink())
                 .buildConfiguration();
 
         //Create our bot with the configuration
