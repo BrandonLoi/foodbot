@@ -1,5 +1,6 @@
 package me.bloi;
 
+import org.apache.commons.lang3.ObjectUtils;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.MessageEvent;
 
@@ -14,6 +15,7 @@ import java.util.*;
 
 public class RecommendFood extends ListenerAdapter {
     static ArrayList<String> foodList = null;
+    static ArrayList<String> iList = null;
     Random rand = null;
     @Override
     public void onMessage(MessageEvent event) {
@@ -27,7 +29,33 @@ public class RecommendFood extends ListenerAdapter {
             String select = foodList.get(rand.nextInt(foodList.size() - 1));
             event.respond(select);
         }
+        if (event.getMessage().startsWith("!ingredient")) {
+            if (iList == null) {
+                iList = getIList();
+                if (iList == null) {
+                    return;
+                }
+            }
+            event.respond(iList.get(rand.nextInt(iList.size() - 1)));
+        }
     }
+
+    private ArrayList<String> getIList() {
+        try {
+            Scanner file = new Scanner(new File("ingredients.txt"));
+            ArrayList<String> i =  new ArrayList<String>();
+            while (file.hasNext()) {
+                i.add(file.next());
+            }
+            file.close();
+            return i;
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 
     private ArrayList<String> getFoodList() {
         try {
