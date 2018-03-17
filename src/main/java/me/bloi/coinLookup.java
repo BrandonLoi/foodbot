@@ -19,8 +19,6 @@ public class coinLookup extends ListenerAdapter{
 
         if (event.getMessage().startsWith("!coin ")) {
             String coinName = event.getMessage().substring(6).toUpperCase();
-            String[] list = coinName.split(" ");
-
 
             URL url = null;
             try {
