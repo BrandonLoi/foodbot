@@ -3,17 +3,17 @@ package me.bloi;
 import org.pircbotx.hooks.ListenerAdapter;
 import org.pircbotx.hooks.events.MessageEvent;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Trumpism extends ListenerAdapter {
     private Random rand = new Random();
+    //Someone Trump doesn't particularly like
     private String[] whoToInsult = {
             "Hillary Clinton",
             "ISIS",
             "Barack Obama",
             "America",
-            "The CIA",
+            "CIA",
             "Shuck Schumer",
             "Nancy Pelosi",
             "CNN",
@@ -43,7 +43,11 @@ public class Trumpism extends ListenerAdapter {
             "Crooked",
             "Failed",
             "Disgraced",
-            "Bad"
+            "Bad",
+            "Corrupt",
+            "Unamerican",
+            "Stooge",
+            "" //in case of nothing
     };
     private String[] verbs = {
             "is attacking",
@@ -57,7 +61,9 @@ public class Trumpism extends ListenerAdapter {
             "created",
             "reported"
     };
+    //Something Trump sees as good.
     private String[] praiseWorthy = {
+            "Trump",
             "Freedom",
             "USA",
             "The Wall",
@@ -74,16 +80,23 @@ public class Trumpism extends ListenerAdapter {
             "Ivanka",
             "Melania",
             "Jared Kushner",
-            "Steve Bannon"
+            "Steve Bannon",
+            "American Steel",
+            "Patriotism",
+            "Boy Scouts",
+            "Mafia connections"
     };
     private String[] punctuation = {
             ".",
             "?",
             "!!",
+            "!!!",
             "!",
             "??",
+            "???",
             " ", //in case of no punctuation
     };
+    //Usually used as it's own sentences at the end of a tweet.
     private String[] exclamation = {
             "Sad",
             "MAGA",
@@ -105,6 +118,11 @@ public class Trumpism extends ListenerAdapter {
             "Awful",
             "Unlikely",
             "Concerning",
+            "Huge",
+            "Loser",
+            "Why",
+            "How",
+            "Do Something",
             " " //in case of nothing
     };
     @Override
