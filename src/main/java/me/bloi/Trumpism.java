@@ -11,6 +11,7 @@ public class Trumpism extends ListenerAdapter {
     private String[] whoToInsult = {
             "Hillary Clinton",
             "ISIS",
+            "Obama",
             "Barack Obama",
             "America",
             "CIA",

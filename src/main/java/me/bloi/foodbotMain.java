@@ -3,9 +3,15 @@ package me.bloi;
 import org.pircbotx.Configuration;
 import org.pircbotx.PircBotX;
 import org.pircbotx.hooks.ListenerAdapter;
+import org.pircbotx.hooks.events.ConnectEvent;
 import org.pircbotx.hooks.types.GenericMessageEvent;
 
 public class foodbotMain extends ListenerAdapter {
+    @Override
+    // Set mode +B for Bots
+    public void onConnect(ConnectEvent event) {
+        event.getBot().sendRaw().rawLine("mode " + event.getBot().getNick() + " +B");
+    }
     @Override
     public void onGenericMessage(GenericMessageEvent event) {
         //When someone says ?helloworld respond with "Hello World"
@@ -20,7 +26,7 @@ public class foodbotMain extends ListenerAdapter {
         Configuration configuration = new Configuration.Builder()
                 .setName("foodbot") //Set the nick of the bot
                 .addServer("irc.dtella.net") //Join the freenode network
-                .addAutoJoinChannel("#bots") //Join the bot channel
+                .addAutoJoinChannel("#dtella") //Join a channel
                 .addListener(new foodbotMain()) //Add THIS listener that will be called on Events
                 .addListener(new RecommendFood())
                 .addListener(new coinLookup())

@@ -19,7 +19,7 @@ public class RecommendFood extends ListenerAdapter {
     Random rand = null;
     @Override
     public void onMessage(MessageEvent event) {
-        if (event.getMessage().startsWith("!food") || event.getMessage().equalsIgnoreCase("what should I eat?")) {
+        if (event.getMessage().equalsIgnoreCase("!foodpls") || event.getMessage().equalsIgnoreCase("what should I eat?")) {
             if (foodList == null) {
                 foodList = getFoodList();
                 if (foodList == null) {
