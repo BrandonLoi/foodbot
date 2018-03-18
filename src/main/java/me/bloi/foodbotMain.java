@@ -27,6 +27,7 @@ public class foodbotMain extends ListenerAdapter {
                 .addListener(new SwansonQuote())
                 .addListener(new GenerateRobot())
                 .addListener(new helpLink())
+                .addListener(new Trumpism())
                 .buildConfiguration();
 
         //Create our bot with the configuration
