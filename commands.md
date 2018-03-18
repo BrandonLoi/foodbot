@@ -15,6 +15,7 @@ https://github.com/BrandonLoi/foodbot/blob/master/foodsList.txt
 Responds with a random ingredient from this list
 
 https://github.com/BrandonLoi/foodbot/blob/master/ingredients.txt
+
 ##!trump OR !trumpism
 Responds with a randomly created sentence that sounds like a Trump tweet
 
