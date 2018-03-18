@@ -22,7 +22,11 @@ public class Trumpism extends ListenerAdapter {
             "James Comey",
             "Ted Cruise",
             "Liberals",
-            "Democrats"
+            "Democrats",
+            "Stormy Daniels",
+            "Marco Rubio",
+            "Mexicans",
+            "Canada"
     };
     private String[] negativeAdjectives = {
             "Sleepy",
@@ -36,18 +40,22 @@ public class Trumpism extends ListenerAdapter {
             "Frail",
             "Phony",
             "Fraud",
-            "Crooked"
+            "Crooked",
+            "Failed",
+            "Disgraced",
+            "Bad"
     };
     private String[] verbs = {
-            "is",
-            "are",
-            "has",
+            "is attacking",
+            "are ruining",
+            "has bankrupt",
             "destroyed",
             "hates",
             "criticized",
             "dislikes",
             "loves",
-            "created"
+            "created",
+            "reported"
     };
     private String[] praiseWorthy = {
             "Freedom",
@@ -59,13 +67,21 @@ public class Trumpism extends ListenerAdapter {
             "White Supremacists",
             "Texas",
             "Coal Miners",
-            "Russia"
+            "Russia",
+            "Republicans",
+            "Conservatives",
+            "Loyal Supporters of Mine",
+            "Ivanka",
+            "Melania",
+            "Jared Kushner",
+            "Steve Bannon"
     };
     private String[] punctuation = {
             ".",
             "?",
             "!!",
             "!",
+            "??",
             " ", //in case of no punctuation
     };
     private String[] exclamation = {
@@ -79,6 +95,16 @@ public class Trumpism extends ListenerAdapter {
             "Meddling",
             "Republicans",
             "Again",
+            "Vote",
+            "Treason",
+            "Witch Hunt",
+            "Again",
+            "Fake News",
+            "Fair",
+            "Jobs",
+            "Awful",
+            "Unlikely",
+            "Concerning",
             " " //in case of nothing
     };
     @Override
